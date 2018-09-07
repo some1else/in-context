@@ -58,8 +58,8 @@ Thumbnail.jsx:
 import './Thumbnail.sass'
 export default ({ src, description }) => (
   <div className='Thumbnail'>
-    <img src={ this.props.src } />
-    <p className='description'>{ this.props.description }</p>
+    <img src={ src } />
+    <p className='description'>{ description }</p>
   </div>
 )
 ```
@@ -110,3 +110,7 @@ Thubmnail.sass:
     +in-context(medium up)
       font-size: normal
 ```
+
+--
+
+Licensed under MIT License
