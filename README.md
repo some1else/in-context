@@ -37,6 +37,7 @@ _Projects.jsx:_
 
 ```jsx
 import './Projects.sass'
+
 export default ({ images }) => (
   <div className='Projects'>
     <div className='Project Project-1'>
@@ -44,7 +45,7 @@ export default ({ images }) => (
         <Thumbnail
           key={`thumbnail-${index}`}
           src={`/images/{src}`}
-          description={`Image ${index + 1}/${images.length}`}
+          alt={`Image ${index + 1}/${images.length}`}
         />
       ))}
     </div>
@@ -56,10 +57,11 @@ _Thumbnail.jsx:_
 
 ```jsx
 import './Thumbnail.sass'
-export default ({ src, description }) => (
+
+export default ({ src, alt }) => (
   <div className='Thumbnail'>
     <img src={ src } />
-    <p className='description'>{ description }</p>
+    <p className='alt-text'>{ alt }</p>
   </div>
 )
 ```
@@ -67,11 +69,16 @@ export default ({ src, description }) => (
 _index.sass:_
 
 ```sass
+@import '~in-context'
+
 body
+
   @media (screen and max-width: 34rem)
     +set-child-context(small)
+
   @media (screen and (min-width: 34rem and max-width: 54rem))
     +set-child-context(medium)
+
   @media (screen and min-width: 54rem)
     +set-child-context(large)
 ```
@@ -79,6 +86,8 @@ body
 _Projects.sass:_
 
 ```sass
+@import '~in-context'
+
 .Projects
   
   +in-context(medium down)
@@ -86,7 +95,7 @@ _Projects.sass:_
     .Project
       width: 100%
   
-    .Thumbnail.description
+    .Thumbnail.alt-text
       +set-context(small)
 
   +in-context(large up)
@@ -100,9 +109,11 @@ _Projects.sass:_
 _Thubmnail.sass:_
 
 ```sass
+@import '~in-context'
+
 .Thumbnail
   
-  .description
+  .alt-text
     
     +in-context(small)
       font-size: small
