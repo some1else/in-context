@@ -10,20 +10,20 @@ Install npm package:
 
 Use in `.sass` files:
 
-```
+```sass
 @import "~in-context"
 
 .album
-	img
-		+in-context(small only)
-			width: 100%
-		+in-context(medium)
-			width: calc(100% / 3)
+  img
+    +in-context(small only)
+      width: 100%
+    +in-context(medium)
+      width: calc(100% / 3)
 ```
 
 Customize breakpoints:
 
-```
+```sass
 $breakpoints: (small: 0, medium: 640px, large: 1024px)
 
 @import "~in-context"
@@ -35,7 +35,7 @@ The idea is to take the best responsive design utility from [ZURB Foundation for
 
 Projects.jsx:
 
-```
+```jsx
 import './Projects.sass'
 export default ({ images }) => (
   <div className='Projects'>
@@ -54,7 +54,7 @@ export default ({ images }) => (
 
 Thumbnail.jsx:
 
-```
+```jsx
 import './Thumbnail.sass'
 export default ({ src, description }) => (
   <div className='Thumbnail'>
@@ -66,7 +66,7 @@ export default ({ src, description }) => (
 
 index.sass:
 
-```
+```sass
 body
   @media (screen and max-width: 34rem)
     +set-child-context(small)
@@ -78,7 +78,7 @@ body
 
 Projects.sass:
 
-```
+```sass
 .Projects
   
   +in-context(medium down)
@@ -99,7 +99,7 @@ Projects.sass:
 
 Thubmnail.sass:
 
-```
+```sass
 .Thumbnail
   
   .description
