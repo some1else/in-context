@@ -1,0 +1,29 @@
+@import '~in-context'
+
+.gallery
+  display: grid
+
+  +in-context(small only)
+    grid-template-columns: 1fr
+    padding: 1rem
+    grid-gap: 1rem
+  
+  +in-context(medium only)
+    grid-template-columns: 1fr
+    padding: 2rem
+    grid-gap: 2rem
+  
+  +in-context(large)
+    grid-template-columns: 1fr 1fr 1fr
+    grid-gap: 3rem
+    padding: 3rem
+
+  .image
+    min-height: 8rem
+    background-color: #eee
+    display: flex
+    justify-content: center
+    align-items: center
+
+    span
+      font-size: 3rem
