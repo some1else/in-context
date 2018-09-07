@@ -1,10 +1,9 @@
 {
   "name": "in-context",
   "version": "0.0.1",
-  "description": "Context for SASS styles",
+  "description": "Context for SASS",
   "main": "src/index.sass",
   "repository": "https://github.com/some1else/in-context",
   "author": "Srđan Prodanović <srdjan.prodanovic@gmail.com>",
-  "license": "MIT",
-  "private": true
+  "license": "MIT"
 }
