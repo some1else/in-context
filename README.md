@@ -1,4 +1,4 @@
-# # In context
+# In context
 
 `in-context` is a SASS utility. Currently it's a fork of the Foundation for Sites [`breakpoint`](https://foundation.zurb.com/sites/docs/media-queries.html#the-breakpoint-mixin). The `+breakpoint(x)` mixin has been aliased to `+in-context(x)`.
 
@@ -33,7 +33,7 @@ $breakpoints: (small: 0, medium: 640px, large: 1024px)
 
 The idea is to take the best responsive design utility from [ZURB Foundation for Sites](https://github.com/zurb/foundation-sites), and make it stand-alone & more flexible. Instead of reflecting on screen space, the mixin can reflect on dynamic contexts defined by parent nodes. Here is an API draft:
 
-Projects.jsx:
+_Projects.jsx:_
 
 ```jsx
 import './Projects.sass'
@@ -52,7 +52,7 @@ export default ({ images }) => (
 )
 ```
 
-Thumbnail.jsx:
+_Thumbnail.jsx:_
 
 ```jsx
 import './Thumbnail.sass'
@@ -64,7 +64,7 @@ export default ({ src, description }) => (
 )
 ```
 
-index.sass:
+_index.sass:_
 
 ```sass
 body
@@ -76,7 +76,7 @@ body
     +set-child-context(large)
 ```
 
-Projects.sass:
+_Projects.sass:_
 
 ```sass
 .Projects
@@ -97,7 +97,7 @@ Projects.sass:
       width: 33.33%
 ```
 
-Thubmnail.sass:
+_Thubmnail.sass:_
 
 ```sass
 .Thumbnail
