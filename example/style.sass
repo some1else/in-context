@@ -1,7 +1,14 @@
 @import '~in-context'
 
+=flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
 .gallery
   display: grid
+  grid-auto-flow: dense
+  grid-auto-rows: 8rem
 
   +in-context(small only)
     grid-template-columns: 1fr
@@ -9,21 +16,44 @@
     grid-gap: 1rem
   
   +in-context(medium only)
-    grid-template-columns: 1fr
+    grid-template-columns: repeat(2, 1fr)
     padding: 2rem
     grid-gap: 2rem
   
   +in-context(large)
-    grid-template-columns: 1fr 1fr 1fr
+    grid-template-columns: repeat(3, 1fr)
     grid-gap: 3rem
     padding: 3rem
 
   .image
-    min-height: 8rem
     background-color: #eee
-    display: flex
-    justify-content: center
-    align-items: center
+    +flex-center
+
+    +in-context(small only)
+      &:nth-child(3)
+        grid-row: span 2
+        font-size: 6rem
+
+    +in-context(medium only)
+
+      &:nth-child(3), &:last-child
+        grid-column: span 2
+      
+      &:nth-child(5), &:nth-child(7)
+        grid-row: span 3
+        font-size: 6rem
+
+    +in-context(large)
+      
+      &:nth-child(5), &:nth-child(6)
+        grid-row: span 2
+        font-size: 6rem
+      
+      &:nth-child(3)
+        grid-column: span 2
+
+      &:last-child
+        grid-column: span 3
 
     span
       font-size: 3rem
